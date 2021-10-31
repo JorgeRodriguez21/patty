@@ -17,7 +17,7 @@ class ApachePOIExcelRead {
     private var firstHeader: Row? = null
     private var secondHeader: Row? = null
     private val dishes: MutableMap<String, MutableList<Dish>> = mutableMapOf()
-    private val file = ResourceUtils.getFile("classpath:22102021_normales.xls")
+    private val file = ResourceUtils.getFile("classpath:01112021_normales.xls")
     fun read() {
         try {
             val workbook: Workbook = WorkbookFactory.create(file)
@@ -112,7 +112,7 @@ class ApachePOIExcelRead {
             createPartDishSheet(mapDishElement, workbook, "ENSALADA")
             createPartDishSheet(mapDishElement, workbook, "BEBIDA", "POSTRE")
         }
-        val out = FileOutputStream(File("22102021.xlsx"))
+        val out = FileOutputStream(File("01112021.xlsx"))
         workbook.write(out)
         out.close()
         println("gfgcontribute.xlsx written successfully on disk.")
